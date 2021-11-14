@@ -16,9 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="onehalf_background" translatesAutoresizingMaskIntoConstraints="NO" id="e0w-Wu-Cgt">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="onehalf_background" translatesAutoresizingMaskIntoConstraints="NO" id="e0w-Wu-Cgt">
+                                <rect key="frame" x="0.0" y="0.0" width="182" height="597"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1X5-k1-DCi">
                                 <rect key="frame" x="0.0" y="480" width="390" height="144"/>
@@ -72,15 +71,19 @@
                             <constraint firstItem="L54-sd-c5i" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-125" id="9Xf-xF-vzC"/>
                             <constraint firstItem="L54-sd-c5i" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="F9A-oq-pqD"/>
                             <constraint firstItem="1X5-k1-DCi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="FME-V8-Kn0"/>
+                            <constraint firstItem="e0w-Wu-Cgt" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Gdw-aA-Hhf"/>
+                            <constraint firstAttribute="bottom" secondItem="e0w-Wu-Cgt" secondAttribute="bottom" id="Pjk-Tz-fs7"/>
                             <constraint firstItem="srd-BI-rNe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QjE-BM-UPt"/>
                             <constraint firstItem="1X5-k1-DCi" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="130" id="Wwh-Wt-5DJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="UU8-Gz-nEu" secondAttribute="bottom" constant="18" id="bRK-Dc-bJQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UU8-Gz-nEu" secondAttribute="trailing" id="dOX-Ak-LZC"/>
                             <constraint firstItem="jMv-9M-t9N" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eBn-Nr-yhs"/>
+                            <constraint firstItem="e0w-Wu-Cgt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fFo-iE-A2G"/>
                             <constraint firstItem="UU8-Gz-nEu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gB9-Ns-8Lt"/>
                             <constraint firstItem="UU8-Gz-nEu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="kZz-pQ-sWN"/>
                             <constraint firstItem="srd-BI-rNe" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="oIP-7A-lqI"/>
                             <constraint firstItem="jMv-9M-t9N" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="29" id="tsf-GP-JRt"/>
+                            <constraint firstItem="e0w-Wu-Cgt" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="uIv-YP-7RE"/>
                             <constraint firstItem="L54-sd-c5i" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vRn-u4-bG3"/>
                         </constraints>
                     </view>
