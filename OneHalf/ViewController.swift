@@ -8,11 +8,11 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet weak var countLabel: UILabel!
+    //-----Outlet接続した変数・関数-----------------------
+    @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var button2: UIButton!
     @IBOutlet weak var imageView: UIImageView!
-    
     @IBAction func tappedButton1(_ sender: Any) {
         disableButtons()
         
@@ -24,7 +24,7 @@ class ViewController: UIViewController {
             imageView.image = UIImage(named: "circle")
             imageView.isHidden = false
             
-            count += 1
+            score += 1
         } else {
             // Hapticを再生
             notificationGen.notificationOccurred(.error)
@@ -33,7 +33,7 @@ class ViewController: UIViewController {
             imageView.image = UIImage(named: "cross")
             imageView.isHidden = false
             
-            count = 0
+            score = 0
         }
     }
     @IBAction func tappedButton2(_ sender: Any) {
@@ -47,7 +47,7 @@ class ViewController: UIViewController {
             imageView.image = UIImage(named: "circle")
             imageView.isHidden = false
             
-            count += 1
+            score += 1
         } else {
             // Hapticを再生
             notificationGen.notificationOccurred(.error)
@@ -56,28 +56,32 @@ class ViewController: UIViewController {
             imageView.image = UIImage(named: "cross")
             imageView.isHidden = false
             
-            count = 0
+            score = 0
         }
     }
     @IBAction func tappedNext(_ sender: Any) {
         // Hapticを再生
         impactGen.impactOccurred()
         
+        // 画面をロード
         viewDidLoad()
     }
+    //-------------------------------------------------
     
+    //-----その他の定数・変数・メソッド-------------------------
+    // Haptic Feedbackを使用するための宣言
     let impactGen = UIImpactFeedbackGenerator(style: .medium)
     let notificationGen = UINotificationFeedbackGenerator()
-                                 
-    var randNum = 0
-    var count = 0
-    
+    // 乱数
+    var randNum = 1
+    // 連続して正解した回数
+    var score = 0
+    // button1とbutton2を無効化するメソッド
     func disableButtons() {
         button1.isEnabled = false
         button2.isEnabled = false
     }
-    
-    
+    // 画面をロックするためのコード
     override var shouldAutorotate: Bool {
         return false
     }
@@ -85,16 +89,16 @@ class ViewController: UIViewController {
         return .portrait
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        // Haptic Feedbackの遅延をなくすためのコード
         impactGen.prepare()
         notificationGen.prepare()
         
         randNum = Int.random(in: 1 ... 2)
-        
-        countLabel.text = "Score: " + String(count)
-        
+        scoreLabel.text = "Score: " + String(score)
         imageView.isHidden = true
         
         // ボタンを有効化
@@ -103,4 +107,5 @@ class ViewController: UIViewController {
         
         print(randNum)
     }
+    //---------------------------------------------------
 }

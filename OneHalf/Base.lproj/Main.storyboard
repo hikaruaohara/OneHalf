@@ -87,8 +87,8 @@
                     <connections>
                         <outlet property="button1" destination="L54-sd-c5i" id="TM6-BU-Cld"/>
                         <outlet property="button2" destination="1X5-k1-DCi" id="NnY-fk-Y9h"/>
-                        <outlet property="countLabel" destination="jMv-9M-t9N" id="OjX-yx-RsM"/>
                         <outlet property="imageView" destination="srd-BI-rNe" id="Rkf-8t-nHJ"/>
+                        <outlet property="scoreLabel" destination="jMv-9M-t9N" id="W76-TS-KKu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
