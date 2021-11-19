@@ -9,7 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
     //-----Outlet接続した変数・関数-----------------------
-    @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var bestScoreLabel: UILabel!
+    @IBOutlet weak var currentScoreLabel: UILabel!
     @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var button2: UIButton!
     @IBOutlet weak var imageView: UIImageView!
@@ -24,7 +25,12 @@ class ViewController: UIViewController {
             imageView.image = UIImage(named: "circle")
             imageView.isHidden = false
             
-            score += 1
+            currentScore += 1
+            
+            // ベストスコア更新
+            if (currentScore > bestScore) {
+                userDefaults.set(currentScore, forKey: "BestScore")
+            }
         } else {
             // Hapticを再生
             notificationGen.notificationOccurred(.error)
@@ -33,8 +39,10 @@ class ViewController: UIViewController {
             imageView.image = UIImage(named: "cross")
             imageView.isHidden = false
             
-            score = 0
+            currentScore = 0
         }
+        
+        userDefaults.set(currentScore, forKey: "CurrentScore")
     }
     @IBAction func tappedButton2(_ sender: Any) {
         disableButtons()
@@ -47,7 +55,12 @@ class ViewController: UIViewController {
             imageView.image = UIImage(named: "circle")
             imageView.isHidden = false
             
-            score += 1
+            currentScore += 1
+            
+            // ベストスコア更新
+            if (currentScore > bestScore) {
+                userDefaults.set(currentScore, forKey: "BestScore")
+            }
         } else {
             // Hapticを再生
             notificationGen.notificationOccurred(.error)
@@ -56,8 +69,10 @@ class ViewController: UIViewController {
             imageView.image = UIImage(named: "cross")
             imageView.isHidden = false
             
-            score = 0
+            currentScore = 0
         }
+        
+        userDefaults.set(currentScore, forKey: "CurrentScore")
     }
     @IBAction func tappedNext(_ sender: Any) {
         // Hapticを再生
@@ -72,10 +87,14 @@ class ViewController: UIViewController {
     // Haptic Feedbackを使用するための宣言
     let impactGen = UIImpactFeedbackGenerator(style: .medium)
     let notificationGen = UINotificationFeedbackGenerator()
+    // UserDefaultsのインスタンス
+    let userDefaults = UserDefaults.standard
+    // 現在のスコア
+    var currentScore = 0
+    // これまでの最高スコア
+    var bestScore = 0
     // 乱数
     var randNum = 1
-    // 連続して正解した回数
-    var score = 0
     // button1とbutton2を無効化するメソッド
     func disableButtons() {
         button1.isEnabled = false
@@ -93,12 +112,22 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // UserDefaultsの初期値
+        userDefaults.register(defaults: ["CurrentScore": 0, "BestScore": 0])
+        
+        // スコアの取得
+        currentScore = userDefaults.object(forKey: "CurrentScore") as! Int
+        bestScore = userDefaults.object(forKey: "BestScore") as! Int
+        
         // Haptic Feedbackの遅延をなくすためのコード
         impactGen.prepare()
         notificationGen.prepare()
         
+        // ラベルの更新
+        currentScoreLabel.text = "Current Score: " + String(currentScore)
+        bestScoreLabel.text = "Best Score: " + String(bestScore)
+        
         randNum = Int.random(in: 1 ... 2)
-        scoreLabel.text = "Score: " + String(score)
         imageView.isHidden = true
         
         // ボタンを有効化

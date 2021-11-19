@@ -43,12 +43,6 @@
                                     <action selector="tappedButton1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P2a-dn-IuI"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jMv-9M-t9N">
-                                <rect key="frame" x="130" y="73" width="130" height="39"/>
-                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="30"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UU8-Gz-nEu">
                                 <rect key="frame" x="0.0" y="713" width="390" height="79"/>
                                 <state key="normal" title="Button"/>
@@ -63,35 +57,50 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="srd-BI-rNe">
                                 <rect key="frame" x="45" y="272" width="300" height="300"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best Score: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VFC-ex-XUn">
+                                <rect key="frame" x="91.666666666666686" y="44" width="207" height="39"/>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="30"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Score: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jMv-9M-t9N">
+                                <rect key="frame" x="65.666666666666657" y="98" width="258.66666666666674" height="39"/>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="30"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="1X5-k1-DCi" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="0Gq-iV-tEy"/>
+                            <constraint firstItem="jMv-9M-t9N" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1UY-Pk-xL1"/>
                             <constraint firstItem="L54-sd-c5i" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-125" id="9Xf-xF-vzC"/>
                             <constraint firstItem="L54-sd-c5i" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="F9A-oq-pqD"/>
                             <constraint firstItem="1X5-k1-DCi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="FME-V8-Kn0"/>
                             <constraint firstItem="e0w-Wu-Cgt" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Gdw-aA-Hhf"/>
                             <constraint firstAttribute="bottom" secondItem="e0w-Wu-Cgt" secondAttribute="bottom" id="Pjk-Tz-fs7"/>
                             <constraint firstItem="srd-BI-rNe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QjE-BM-UPt"/>
+                            <constraint firstItem="VFC-ex-XUn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Uwc-cB-eRW"/>
+                            <constraint firstItem="VFC-ex-XUn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="WRX-gd-R6N"/>
                             <constraint firstItem="1X5-k1-DCi" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="130" id="Wwh-Wt-5DJ"/>
+                            <constraint firstItem="jMv-9M-t9N" firstAttribute="top" secondItem="VFC-ex-XUn" secondAttribute="bottom" constant="15" id="XTe-ko-Ymq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="UU8-Gz-nEu" secondAttribute="bottom" constant="18" id="bRK-Dc-bJQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UU8-Gz-nEu" secondAttribute="trailing" id="dOX-Ak-LZC"/>
-                            <constraint firstItem="jMv-9M-t9N" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eBn-Nr-yhs"/>
                             <constraint firstItem="e0w-Wu-Cgt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fFo-iE-A2G"/>
                             <constraint firstItem="UU8-Gz-nEu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gB9-Ns-8Lt"/>
                             <constraint firstItem="UU8-Gz-nEu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="kZz-pQ-sWN"/>
                             <constraint firstItem="srd-BI-rNe" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="oIP-7A-lqI"/>
-                            <constraint firstItem="jMv-9M-t9N" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="29" id="tsf-GP-JRt"/>
                             <constraint firstItem="e0w-Wu-Cgt" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="uIv-YP-7RE"/>
                             <constraint firstItem="L54-sd-c5i" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vRn-u4-bG3"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bestScoreLabel" destination="VFC-ex-XUn" id="eT4-ic-Coz"/>
                         <outlet property="button1" destination="L54-sd-c5i" id="TM6-BU-Cld"/>
                         <outlet property="button2" destination="1X5-k1-DCi" id="NnY-fk-Y9h"/>
+                        <outlet property="currentScoreLabel" destination="jMv-9M-t9N" id="tX4-uP-8Ba"/>
                         <outlet property="imageView" destination="srd-BI-rNe" id="Rkf-8t-nHJ"/>
-                        <outlet property="scoreLabel" destination="jMv-9M-t9N" id="W76-TS-KKu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
