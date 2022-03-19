@@ -8,6 +8,9 @@
 import UIKit
 import GameKit
 
+// UserDefaultsのインスタンス
+let userDefaults = UserDefaults.standard
+
 class MenuViewController: UIViewController, GKGameCenterControllerDelegate {
     
     func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
@@ -50,6 +53,9 @@ class MenuViewController: UIViewController, GKGameCenterControllerDelegate {
         notificationGen.prepare()
         
         authenticateLocalPlayer()
+        
+        // UserDefaultsの初期値
+        userDefaults.register(defaults: ["CurrentScore": 0, "BestScore": 0])
         
         let bestScore = userDefaults.object(forKey: "BestScore") as! Int
         scoreLabel.text = String(bestScore)

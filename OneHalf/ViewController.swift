@@ -8,10 +8,6 @@
 import UIKit
 import GameKit
 
-// UserDefaultsのインスタンス
-let userDefaults = UserDefaults.standard
-
-
 class ViewController: UIViewController {
     
     //-----Outlet接続した変数・関数-----------------------
@@ -142,9 +138,6 @@ class ViewController: UIViewController {
 //                }
 //            }
 //        }
-        
-        // UserDefaultsの初期値
-        userDefaults.register(defaults: ["CurrentScore": 0, "BestScore": 0])
         
         // スコアの取得
         currentScore = userDefaults.object(forKey: "CurrentScore") as! Int
