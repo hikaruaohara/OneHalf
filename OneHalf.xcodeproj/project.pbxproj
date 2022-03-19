@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		171D722627E4C9CA004A6ED7 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 171D722527E4C9CA004A6ED7 /* GameKit.framework */; };
+		171D722827E50F04004A6ED7 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171D722727E50F04004A6ED7 /* MenuViewController.swift */; };
 		17995DF4273D5DDC006F4E03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17995DF3273D5DDC006F4E03 /* AppDelegate.swift */; };
 		17995DF6273D5DDC006F4E03 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17995DF5273D5DDC006F4E03 /* SceneDelegate.swift */; };
 		17995DF8273D5DDC006F4E03 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17995DF7273D5DDC006F4E03 /* ViewController.swift */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		171D722527E4C9CA004A6ED7 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		171D722727E50F04004A6ED7 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		17995DF0273D5DDC006F4E03 /* OneHalf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneHalf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17995DF3273D5DDC006F4E03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17995DF5273D5DDC006F4E03 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				171D722627E4C9CA004A6ED7 /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +81,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		171D722427E4C9CA004A6ED7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				171D722527E4C9CA004A6ED7 /* GameKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		17995DE7273D5DDC006F4E03 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +96,7 @@
 				17995E09273D5DDF006F4E03 /* OneHalfTests */,
 				17995E13273D5DDF006F4E03 /* OneHalfUITests */,
 				17995DF1273D5DDC006F4E03 /* Products */,
+				171D722427E4C9CA004A6ED7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +117,7 @@
 				17995DF5273D5DDC006F4E03 /* SceneDelegate.swift */,
 				17995DF7273D5DDC006F4E03 /* ViewController.swift */,
 				17995DF9273D5DDC006F4E03 /* Main.storyboard */,
+				171D722727E50F04004A6ED7 /* MenuViewController.swift */,
 				17995DFC273D5DDE006F4E03 /* Assets.xcassets */,
 				17995DFE273D5DDE006F4E03 /* LaunchScreen.storyboard */,
 				17995E01273D5DDE006F4E03 /* Info.plist */,
@@ -261,6 +276,7 @@
 				17995DF8273D5DDC006F4E03 /* ViewController.swift in Sources */,
 				17995DF4273D5DDC006F4E03 /* AppDelegate.swift in Sources */,
 				17995DF6273D5DDC006F4E03 /* SceneDelegate.swift in Sources */,
+				171D722827E50F04004A6ED7 /* MenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,14 +461,15 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = gamekit;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hikaruaohara.OneHalf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -474,14 +491,15 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = gamekit;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hikaruaohara.OneHalf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
