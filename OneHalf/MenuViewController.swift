@@ -51,6 +51,14 @@ class MenuViewController: UIViewController, GKGameCenterControllerDelegate {
         
         authenticateLocalPlayer()
         
+        if GKLocalPlayer.local.isAuthenticated {
+            GKLeaderboard.loadLeaderboards(IDs: ["bestscore"], completionHandler: { leaderboards, _ in
+                leaderboards?[0].loadEntries(for: [GKLocalPlayer.local], timeScope: .allTime, completionHandler: { player, _, _ in
+                    userDefaults.set(player?.score, forKey: "BestScore")
+                })
+            })
+        }
+        
         let bestScore = userDefaults.object(forKey: "BestScore") as! Int
         scoreLabel.text = String(bestScore)
 
@@ -58,16 +66,4 @@ class MenuViewController: UIViewController, GKGameCenterControllerDelegate {
         probability = round(probability * 100) / 100
         probabilityLabel.text = String(probability)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

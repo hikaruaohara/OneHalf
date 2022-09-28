@@ -9,12 +9,10 @@ import UIKit
 import GameKit
 
 // UserDefaultsのインスタンス
-let userDefaults = UserDefaults.standard
-
+public let userDefaults = UserDefaults.standard
 
 class ViewController: UIViewController {
-    
-    //-----Outlet接続した変数・関数-----------------------
+    // MARK: - Property
     @IBOutlet weak var bestScoreLabel: UILabel!
     @IBOutlet weak var currentScoreLabel: UILabel!
     @IBOutlet weak var button1: UIButton!
@@ -23,6 +21,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var menuButton: UIButton!
     
+    // Haptic Feedbackを使用するための宣言
+    let impactGen = UIImpactFeedbackGenerator(style: .medium)
+    let notificationGen = UINotificationFeedbackGenerator()
+    // 現在のスコア
+    var currentScore = 0
+    // これまでの最高スコア
+    var bestScore = 0
+    // 乱数
+    var randNum = 1
+    
+    // MARK: - Method
     @IBAction func tappedButton1(_ sender: Any) {
         disableButtons()
         nextButton.isHidden = false
@@ -54,6 +63,7 @@ class ViewController: UIViewController {
         
         userDefaults.set(currentScore, forKey: "CurrentScore")
     }
+    
     @IBAction func tappedButton2(_ sender: Any) {
         disableButtons()
         nextButton.isHidden = false
@@ -85,6 +95,7 @@ class ViewController: UIViewController {
         
         userDefaults.set(currentScore, forKey: "CurrentScore")
     }
+    
     @IBAction func tappedNext(_ sender: Any) {
         // Hapticを再生
         impactGen.impactOccurred()
@@ -92,21 +103,11 @@ class ViewController: UIViewController {
         // 画面をロード
         viewDidLoad()
     }
+    
     @IBAction func tappedMenu(_ sender: Any) {
         impactGen.impactOccurred()
     }
-    //-------------------------------------------------
-    
-    //-----その他の定数・変数・メソッド-------------------------
-    // Haptic Feedbackを使用するための宣言
-    let impactGen = UIImpactFeedbackGenerator(style: .medium)
-    let notificationGen = UINotificationFeedbackGenerator()
-    // 現在のスコア
-    var currentScore = 0
-    // これまでの最高スコア
-    var bestScore = 0
-    // 乱数
-    var randNum = 1
+
     // ボタンを有効化するメソッド
     func enableButtons() {
         button1.isEnabled = true
@@ -129,7 +130,6 @@ class ViewController: UIViewController {
         })
         print("submitしました")
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -170,5 +170,4 @@ class ViewController: UIViewController {
         
         print(randNum)
     }
-    //---------------------------------------------------
 }
