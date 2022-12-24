@@ -59,7 +59,7 @@ class MenuViewController: UIViewController, GKGameCenterControllerDelegate {
             })
         }
         
-        let bestScore = userDefaults.object(forKey: "BestScore") as! Int
+        let bestScore = userDefaults.integer(forKey: "BestScore")
         scoreLabel.text = String(bestScore)
 
         var probability = 100 / pow(2.0, Double(bestScore))
