@@ -147,8 +147,9 @@ class ViewController: UIViewController {
         userDefaults.register(defaults: ["CurrentScore": 0, "BestScore": 0])
         
         // スコアの取得
-        currentScore = userDefaults.object(forKey: "CurrentScore") as! Int
-        bestScore = userDefaults.object(forKey: "BestScore") as! Int
+        currentScore = userDefaults.integer(forKey: "CurrentScore")
+        currentScore = userDefaults.integer(forKey: "CurrentScore")
+        bestScore = userDefaults.integer(forKey: "BestScore")
         
         submit()
         
